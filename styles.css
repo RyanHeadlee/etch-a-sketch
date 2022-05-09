@@ -20,15 +20,14 @@ body {
 }
 
 .playButton {
-  display: flex;
-  justify-content: center;
-  align-self: center;
   margin-top: 5vh;
   background-color: black;
   color: white;
   border: 0;
   padding: 1em 4em;
 }
+
+.playButton:hover {background-color: grey;}
 
 .optionsContainer {
   display: flex;
@@ -42,12 +41,14 @@ button {
   border: 3px solid black;
   border-radius: 0.3em;
   padding: 0.5em 1em;
+  min-width: auto;
 }
 
 
 .active {
   border-color: gold !important;
-  
+  transform: scale(1.2) !important;
+  font-weight: bold !important;
 }
 
 .redButton {background-color: #FC3C1C;}
