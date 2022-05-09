@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #B81D0C;
+  color: #FFFFFF;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
 }
 
 .playButton {
-  margin-top: 5vh;
+  margin-top: 2vh;
   background-color: black;
   color: white;
   border: 0;
