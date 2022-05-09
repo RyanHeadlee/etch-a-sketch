@@ -37,6 +37,10 @@ body {
   margin-top: 2vh;
 }
 
+.optionsContainer button {
+  color: black;
+}
+
 button {
   border: 3px solid black;
   border-radius: 0.3em;
@@ -51,26 +55,16 @@ button {
   font-weight: bold !important;
 }
 
-.redButton {background-color: #FC3C1C;}
+.redButton, .red {background-color: #FC3C1C;}
 
-.greenButton {background-color: green;}
+.greenButton, .green {background-color: #16AD14;}
 
-.blueButton {background-color: blue;}
+.blueButton, .blue {background-color: #0E75C3;}
 
-.greyButton {background-color: grey;}
+.greyButton, .sketched {background-color: #525659;}
 
-.yellowButton {background-color: yellow;}
+.yellowButton, .yellow {background-color: #DDE713;}
 
-.eraserButton {background-color: pink;}
-
-.red {background-color: red;}
-
-.blue {background-color: blue;}
-
-.green {background-color: green;}
-
-.sketched {background-color: #3D3736;}
-
-.yellow {background-color: yellow;}
+.eraserButton {background-color: hotpink;}
 
 .eraser {background-color: white;}
