@@ -5,6 +5,7 @@ const grey = document.querySelector(".greyButton");
 const green = document.querySelector(".greenButton");
 const blue = document.querySelector(".blueButton");
 const eraser = document.querySelector(".eraserButton");
+const buttons = document.querySelectorAll(".color");
 let color;
 let playDivs;
 let area;
@@ -75,8 +76,28 @@ function playSketch() {
   }
 }
 
-red.addEventListener('click', () => color = "red");
-grey.addEventListener('click', () => color = "grey");
-green.addEventListener('click', () => color = "green");
-blue.addEventListener('click', () => color = "blue");
-eraser.addEventListener('click', () => color = "eraser");
+red.addEventListener('click', () => {
+  color = "red"
+  buttons.forEach(button => button.classList.remove("active"));
+  red.classList.add("active");
+});
+grey.addEventListener('click', () => {
+  color = "grey"
+  buttons.forEach(button => button.classList.remove("active"));
+  grey.classList.add("active");
+});
+green.addEventListener('click', () => {
+  color = "green"
+  buttons.forEach(button => button.classList.remove("active"));
+  green.classList.add("active");
+});
+blue.addEventListener('click', () => {
+  color = "blue"
+  buttons.forEach(button => button.classList.remove("active"));
+  blue.classList.add("active");
+});
+eraser.addEventListener('click', () => {
+  color = "eraser"
+  buttons.forEach(button => button.classList.remove("active")); 
+  eraser.classList.add("active");
+});
