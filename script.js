@@ -1,9 +1,8 @@
 const container = document.querySelector(".container");
-const playButton = document.querySelectorAll(".playButton");
-const playDiv = document.querySelectorAll(".default");
+const playButton = document.querySelector(".playButton");
+let playDivs;
 let area;
 let div;
-let keepGoing = false;
 
 function createDivs(area) {
   if (area > 100 || Number(!area)) return; 
@@ -19,15 +18,6 @@ function createDivs(area) {
 // event listener for mouse over
 //   when div is moused over 
 //     change background color of div
-
-function playSketch() {
-  while (keepGoing === true) {
-    playDiv.addEventListener("mouseover", () => {
-      playDiv.classList.add("sketched");
-      console.log("Hello");
-    });
-  }
-}
 
 playButton.addEventListener("click", () => {
   if (playButton.classList.contains("reset")) {
@@ -50,3 +40,16 @@ playButton.addEventListener("click", () => {
     playSketch();
   }
 });
+
+function playSketch() {
+  playDivs = document.querySelectorAll(".default");
+  console.log(playDivs.length);
+  for (let i = 0; i < playDivs.length; i++) {
+    let playDiv = playDivs[i];
+
+    playDiv.addEventListener('mouseover', function (event) {
+      event.preventDefault();
+      playDiv.classList.add("sketched");
+    }, false);
+  }
+}
