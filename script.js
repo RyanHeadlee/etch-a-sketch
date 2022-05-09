@@ -43,13 +43,12 @@ playButton.addEventListener("click", () => {
 
 function playSketch() {
   playDivs = document.querySelectorAll(".default");
-  console.log(playDivs.length);
   for (let i = 0; i < playDivs.length; i++) {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function (event) {
       event.preventDefault();
       playDiv.classList.add("sketched");
-    }, false);
+    });
   }
 }
