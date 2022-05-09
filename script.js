@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const playButton = document.querySelector(".playButton");
+const black = document.querySelector(".blackButton");
 const red = document.querySelector(".redButton");
 const grey = document.querySelector(".greyButton");
 const green = document.querySelector(".greenButton");
@@ -53,34 +54,43 @@ function playSketch() {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function () {
+      if (color == "black") {
+        playDiv.classList.remove("green", "sketched", "blue", "eraser", "yellow", "red");
+        playDiv.classList.add("black");
+      }
       if (color == "red") {
-        playDiv.classList.remove("green", "sketched", "blue", "eraser", "yellow");
+        playDiv.classList.remove("green", "sketched", "blue", "eraser", "yellow", "black");
         playDiv.classList.add("red");
       }
       if (color == "grey") {
-        playDiv.classList.remove("green", "red", "blue", "eraser", "yellow");
+        playDiv.classList.remove("green", "red", "blue", "eraser", "yellow", "black");
         playDiv.classList.add("sketched");
       }
       if (color == "green") {
-        playDiv.classList.remove("yellow", "sketched", "red", "blue", "eraser");
+        playDiv.classList.remove("yellow", "sketched", "red", "blue", "eraser", "black");
         playDiv.classList.add("green");
       }
       if (color == "blue") {
-        playDiv.classList.remove("green", "sketched", "red", "eraser", "yellow");
+        playDiv.classList.remove("green", "sketched", "red", "eraser", "yellow", "black");
         playDiv.classList.add("blue");
       }
       if (color == "yellow") {
-        playDiv.classList.remove("green", "sketched", "red", "eraser", "blue")
+        playDiv.classList.remove("green", "sketched", "red", "eraser", "blue", "black")
         playDiv.classList.add("yellow");
       }
       if (color == "eraser") {
-        playDiv.classList.remove("green", "sketched", "blue", "red", "yellow");
+        playDiv.classList.remove("green", "sketched", "blue", "red", "yellow", "black");
         playDiv.classList.add("eraser");
       }
     });
   }
 }
 
+black.addEventListener('click', () => {
+  color = "black";
+  buttons.forEach(button => button.classList.remove("active"));
+  black.classList.add("active");
+});
 red.addEventListener('click', () => {
   color = "red"
   buttons.forEach(button => button.classList.remove("active"));

@@ -12,7 +12,7 @@ body {
 .container {
   display: grid;
   position: relative;
-  margin-top: 5vh;
+  margin-top: 3vh;
   height: 40em;
   width: 40em;
   background-color: white;
@@ -38,7 +38,8 @@ body {
 }
 
 .optionsContainer button {
-  color: black;
+  width: 3em;
+  height: 2em;
 }
 
 button {
@@ -51,9 +52,10 @@ button {
 
 .active {
   border-color: gold !important;
-  transform: scale(1.2) !important;
-  font-weight: bold !important;
+  transform: scale(1.5) !important;
 }
+
+.blackButton, .black {background-color: black}
 
 .redButton, .red {background-color: #FC3C1C;}
 
@@ -65,6 +67,4 @@ button {
 
 .yellowButton, .yellow {background-color: #DDE713;}
 
-.eraserButton {background-color: hotpink;}
-
-.eraser {background-color: white;}
+.eraserButton, .eraser {background-color: white;}
