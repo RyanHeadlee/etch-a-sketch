@@ -5,7 +5,6 @@ let area;
 let div;
 
 function createDivs(area) {
-  if (area > 100 || Number(!area)) return; 
   container.setAttribute("style", "grid-template-columns: repeat(" + area + ", auto);");
 
   for (let i = 0; i < (area * area); i++) {
@@ -14,10 +13,6 @@ function createDivs(area) {
     div.classList.add("default");
   }
 }
-
-// event listener for mouse over
-//   when div is moused over 
-//     change background color of div
 
 playButton.addEventListener("click", () => {
   if (playButton.classList.contains("reset")) {
@@ -32,6 +27,7 @@ playButton.addEventListener("click", () => {
   
   if (playButton.classList.contains("play")) {
     area = Number(prompt("Size of sketch area:" + ""));
+    if (area > 100 || Number(!area)) return; 
     createDivs(area);
     playButton.textContent = "Reset Sketch";
     playButton.classList.toggle("play");
@@ -46,8 +42,7 @@ function playSketch() {
   for (let i = 0; i < playDivs.length; i++) {
     let playDiv = playDivs[i];
 
-    playDiv.addEventListener('mouseover', function (event) {
-      event.preventDefault();
+    playDiv.addEventListener('mouseover', function () {
       playDiv.classList.add("sketched");
     });
   }
