@@ -1,5 +1,11 @@
 const container = document.querySelector(".container");
 const playButton = document.querySelector(".playButton");
+const red = document.querySelector(".redButton");
+const grey = document.querySelector(".greyButton");
+const green = document.querySelector(".greenButton");
+const blue = document.querySelector(".blueButton");
+const eraser = document.querySelector(".eraserButton");
+let color;
 let playDivs;
 let area;
 let div;
@@ -27,7 +33,9 @@ playButton.addEventListener("click", () => {
   
   if (playButton.classList.contains("play")) {
     area = Number(prompt("Size of sketch area:" + ""));
+    
     if (area > 100 || Number(!area)) return; 
+    
     createDivs(area);
     playButton.textContent = "Reset Sketch";
     playButton.classList.toggle("play");
@@ -43,7 +51,25 @@ function playSketch() {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function () {
-      playDiv.classList.add("sketched");
+      if (color == "red") {
+        playDiv.classList.remove("green", "sketched", "blue", "eraser");
+        playDiv.classList.add("red");
+      }
+      if (color == "grey") {
+        playDiv.classList.remove("green", "red", "blue", "eraser");
+        playDiv.classList.add("sketched");
+      }
+      if (color == "green") {
+        playDiv.classList.add("green");
+      }
+      if (color == "blue") playDiv.classList.add("blue");
+      if (color == "eraser") playDiv.classList.add("eraser");
     });
   }
 }
+
+red.addEventListener('click', () => color = "red");
+grey.addEventListener('click', () => color = "grey");
+green.addEventListener('click', () => color = "green");
+blue.addEventListener('click', () => color = "blue");
+eraser.addEventListener('click', () => color = "eraser");

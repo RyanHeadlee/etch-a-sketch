@@ -12,19 +12,74 @@ body {
 .container {
   display: grid;
   position: relative;
-  margin-top: 10vh;
+  margin-top: 5vh;
   height: 40em;
   width: 40em;
   background-color: white;
   border: 5px solid black;
 }
 
-.start {
+.playButton {
   display: flex;
   justify-content: center;
   align-self: center;
+  margin-top: 5vh;
+  background-color: black;
+  color: white;
+  border: 0;
+  padding: 1em 4em;
+}
+
+.optionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 2vh;
+}
+
+button {
+  border: 3px solid black;
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+}
+
+.redButton {
+  background-color: #FC3C1C;
+}
+
+.greenButton {
+  background-color: green;
+}
+
+.blueButton {
+  background-color: blue;
+}
+
+.greyButton {
+  background-color: grey;
+}
+
+.eraserButton {
+  background-color: pink;
 }
 
 .sketched {
   background-color: #3D3736;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.eraser {
+  background-color: white;
 }
