@@ -60,10 +60,17 @@ function playSketch() {
         playDiv.classList.add("sketched");
       }
       if (color == "green") {
+        playDiv.classList.remove("sketched", "red", "blue", "eraser");
         playDiv.classList.add("green");
       }
-      if (color == "blue") playDiv.classList.add("blue");
-      if (color == "eraser") playDiv.classList.add("eraser");
+      if (color == "blue") {
+        playDiv.classList.remove("green", "sketched", "red", "eraser");
+        playDiv.classList.add("blue");
+      }
+      if (color == "eraser") {
+        playDiv.classList.remove("green", "sketched", "blue", "red");
+        playDiv.classList.add("eraser");
+      }
     });
   }
 }
