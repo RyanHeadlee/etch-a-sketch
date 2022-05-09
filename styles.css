@@ -59,14 +59,18 @@ button {
 
 .greyButton {background-color: grey;}
 
-.eraserButton {background-color: pink;}
+.yellowButton {background-color: yellow;}
 
-.sketched {background-color: #3D3736;}
+.eraserButton {background-color: pink;}
 
 .red {background-color: red;}
 
 .blue {background-color: blue;}
 
 .green {background-color: green;}
+
+.sketched {background-color: #3D3736;}
+
+.yellow {background-color: yellow;}
 
 .eraser {background-color: white;}

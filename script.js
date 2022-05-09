@@ -4,6 +4,7 @@ const red = document.querySelector(".redButton");
 const grey = document.querySelector(".greyButton");
 const green = document.querySelector(".greenButton");
 const blue = document.querySelector(".blueButton");
+const yellow = document.querySelector(".yellowButton");
 const eraser = document.querySelector(".eraserButton");
 const buttons = document.querySelectorAll(".color");
 let color;
@@ -53,23 +54,27 @@ function playSketch() {
 
     playDiv.addEventListener('mouseover', function () {
       if (color == "red") {
-        playDiv.classList.remove("green", "sketched", "blue", "eraser");
+        playDiv.classList.remove("green", "sketched", "blue", "eraser", "yellow");
         playDiv.classList.add("red");
       }
       if (color == "grey") {
-        playDiv.classList.remove("green", "red", "blue", "eraser");
+        playDiv.classList.remove("green", "red", "blue", "eraser", "yellow");
         playDiv.classList.add("sketched");
       }
       if (color == "green") {
-        playDiv.classList.remove("sketched", "red", "blue", "eraser");
+        playDiv.classList.remove("yellow", "sketched", "red", "blue", "eraser");
         playDiv.classList.add("green");
       }
       if (color == "blue") {
-        playDiv.classList.remove("green", "sketched", "red", "eraser");
+        playDiv.classList.remove("green", "sketched", "red", "eraser", "yellow");
         playDiv.classList.add("blue");
       }
+      if (color == "yellow") {
+        playDiv.classList.remove("green", "sketched", "red", "eraser", "blue")
+        playDiv.classList.add("yellow");
+      }
       if (color == "eraser") {
-        playDiv.classList.remove("green", "sketched", "blue", "red");
+        playDiv.classList.remove("green", "sketched", "blue", "red", "yellow");
         playDiv.classList.add("eraser");
       }
     });
@@ -95,6 +100,11 @@ blue.addEventListener('click', () => {
   color = "blue"
   buttons.forEach(button => button.classList.remove("active"));
   blue.classList.add("active");
+});
+yellow.addEventListener('click', () => {
+  color = "yellow"
+  buttons.forEach(button => button.classList.remove("active"));
+  yellow.classList.add("active");
 });
 eraser.addEventListener('click', () => {
   color = "eraser"
