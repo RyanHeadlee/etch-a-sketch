@@ -81,42 +81,71 @@ function playSketch() {
       if (color == "eraser") {
         playDiv.classList.remove("green", "sketched", "blue", "red", "yellow", "black");
         playDiv.classList.add("eraser");
-      }
+      } 
+      if (color == "empty") return;
     });
   }
 }
 
 black.addEventListener('click', () => {
+  if (black.classList.contains("active")) {
+    color = "empty";
+    return black.classList.remove("active");
+  }
   color = "black";
   buttons.forEach(button => button.classList.remove("active"));
   black.classList.add("active");
 });
 red.addEventListener('click', () => {
+  if (red.classList.contains("active")) {
+    color = "empty";
+    return red.classList.remove("active");
+  }
   color = "red"
   buttons.forEach(button => button.classList.remove("active"));
   red.classList.add("active");
 });
 grey.addEventListener('click', () => {
+  if (grey.classList.contains("active")) {
+    color = "empty";
+    return grey.classList.remove("active");
+  }
   color = "grey"
   buttons.forEach(button => button.classList.remove("active"));
   grey.classList.add("active");
 });
 green.addEventListener('click', () => {
+  if (green.classList.contains("active")) {
+    color = "empty";
+    return green.classList.remove("active");
+  }
   color = "green"
   buttons.forEach(button => button.classList.remove("active"));
   green.classList.add("active");
 });
 blue.addEventListener('click', () => {
+  if (blue.classList.contains("active")) {
+    color = "empty";
+    return blue.classList.remove("active");
+  }
   color = "blue"
   buttons.forEach(button => button.classList.remove("active"));
   blue.classList.add("active");
 });
 yellow.addEventListener('click', () => {
+  if (yellow.classList.contains("active")) {
+    color = "empty";
+    return yellow.classList.remove("active");
+  }
   color = "yellow"
   buttons.forEach(button => button.classList.remove("active"));
   yellow.classList.add("active");
 });
 eraser.addEventListener('click', () => {
+  if (eraser.classList.contains("active")) {
+    color = "empty";
+    return eraser.classList.remove("active");
+  }
   color = "eraser"
   buttons.forEach(button => button.classList.remove("active")); 
   eraser.classList.add("active");
