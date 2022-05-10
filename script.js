@@ -13,6 +13,8 @@ let playDivs;
 let area;
 let div;
 
+// Creates the workspace via the given area. 
+
 function createDivs(area) {
   container.setAttribute("style", "grid-template-columns: repeat(" + area + ", auto);");
 
@@ -22,6 +24,9 @@ function createDivs(area) {
     div.classList.add("default");
   }
 }
+
+// When button is clicked ask for the height or width of the workspace.
+// Button changes between play (default) and reset which deletes the workspace.
 
 playButton.addEventListener("click", () => {
   if (playButton.classList.contains("reset")) {
@@ -47,6 +52,8 @@ playButton.addEventListener("click", () => {
     playSketch();
   }
 });
+
+// This function displays the color when the sketch is moused over. 
 
 function playSketch() {
   playDivs = document.querySelectorAll(".default");
@@ -86,6 +93,9 @@ function playSketch() {
     });
   }
 }
+
+// These event listeners will choose the color of the sketch and will toggle off
+// when clicked again.
 
 black.addEventListener('click', () => {
   if (black.classList.contains("active")) {
