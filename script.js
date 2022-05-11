@@ -1,6 +1,8 @@
 const container = document.querySelector(".container");
 const playButton = document.querySelector(".playButton");
 const colors = document.querySelectorAll(".color");
+const input = document.querySelector(".colorInput");
+const submit = document.querySelector(".colorSubmit");
 let divColor;
 let playDivs;
 let area;
@@ -76,4 +78,9 @@ colors.forEach(color => {
     colors.forEach(color => color.classList.remove("active"));
     color.classList.add("active");
   });
+});
+
+submit.addEventListener('click', () => {
+  if (input.value == /^[a-z\d]{3,6}$/) return;
+  alert(input.value);
 });
