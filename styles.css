@@ -56,16 +56,16 @@ button {
   transform: scale(1.5) !important;
 }
 
-.blackButton, .black {background-color: black}
+.blackButton {background-color: black}
 
-.redButton, .red {background-color: #FC3C1C;}
+.redButton {background-color: #FC3C1C;}
 
-.greenButton, .green {background-color: #16AD14;}
+.greenButton {background-color: #16AD14;}
 
-.blueButton, .blue {background-color: #0E75C3;}
+.blueButton {background-color: #0E75C3;}
 
-.greyButton, .sketched {background-color: #525659;}
+.greyButton {background-color: #525659;}
 
-.yellowButton, .yellow {background-color: #DDE713;}
+.yellowButton {background-color: #DDE713;}
 
-.eraserButton, .eraser {background-color: white;}
+.eraserButton {background-color: white;}

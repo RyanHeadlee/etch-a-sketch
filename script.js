@@ -34,7 +34,9 @@ playButton.addEventListener("click", () => {
   
   if (playButton.classList.contains("play")) {
     area = Number(prompt("Size of the workspace: " + ""));
+    
     if ((area > 100 || area < 0)|| Number(!area)) return; 
+    
     createDivs(area);
     playButton.textContent = "Reset Sketch";
     playButton.classList.toggle("play");
@@ -52,29 +54,11 @@ function playSketch() {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function () {
-      playDiv.classList.remove(...playDiv.classList);
-      if (color == "blackButton") {
-        playDiv.classList.add("black");
-      }
-      if (color == "redButton") {
-        playDiv.classList.add("red");
-      }
-      if (color == "greyButton") {
-        playDiv.classList.add("sketched");
-      }
-      if (color == "greenButton") {
-        playDiv.classList.add("green");
-      }
-      if (color == "blueButton") {
-        playDiv.classList.add("blue");
-      }
-      if (color == "yellowButton") {
-        playDiv.classList.add("yellow");
-      }
-      if (color == "eraserButton") {
-        playDiv.classList.add("eraser");
-      } 
       if (color == "empty") return;
+
+      playDiv.classList.remove(...playDiv.classList);
+      
+      playDiv.classList.add(color);
     });
   }
 }
@@ -88,6 +72,7 @@ buttons.forEach(button => {
       color = "empty";
       return button.classList.remove("active");
     }
+    
     color = button.classList[0];
     buttons.forEach(button => button.classList.remove("active"));
     button.classList.add("active");
