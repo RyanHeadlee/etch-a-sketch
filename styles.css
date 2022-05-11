@@ -36,6 +36,8 @@ body {
   align-items: center;
   gap: 1.5em;
   margin-top: 2vh;
+  width: 25em;
+  flex-wrap: wrap;
 }
 
 .optionsContainer button {
@@ -67,5 +69,15 @@ button {
 .greyButton {background-color: #525659;}
 
 .yellowButton {background-color: #DDE713;}
+
+.orangeButton {background-color: #F8880B;}
+
+.violetButton {background-color: #9514CE;}
+
+.cyanButton {background-color: #00FFFF;}
+
+.hotPinkButton {background-color: #FF69B4;}
+
+.maroonButton {background-color: #800000;}
 
 .eraserButton {background-color: white;}
