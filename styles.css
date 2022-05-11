@@ -34,10 +34,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5em;
-  margin-top: 2vh;
-  width: 25em;
+  gap: 1em;
+  width: 8em;
   flex-wrap: wrap;
+  border: 3px solid black;
+  padding: 0.5em 0;
+  background-color: #D32727;
+  height: 20em;
+  margin-right: 1em;
+}
+
+.fullContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7.5em;
 }
 
 .optionsContainer button {
@@ -55,12 +66,12 @@ button {
 
 .active {
   border-color: gold !important;
-  transform: scale(1.5) !important;
+  transform: scale(1.4) !important;
 }
 
 .blackButton {background-color: black}
 
-.redButton {background-color: #FC3C1C;}
+.redButton {background-color: #FA1919;}
 
 .greenButton {background-color: #16AD14;}
 
