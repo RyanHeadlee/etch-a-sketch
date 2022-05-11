@@ -33,7 +33,7 @@ playButton.addEventListener("click", () => {
   }
   
   if (playButton.classList.contains("play")) {
-    area = Number(prompt("Size of sketch area:" + ""));
+    area = Number(prompt("Size of the workspace: " + ""));
     if ((area > 100 || area < 0)|| Number(!area)) return; 
     createDivs(area);
     playButton.textContent = "Reset Sketch";
@@ -52,32 +52,26 @@ function playSketch() {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function () {
+      playDiv.classList.remove(...playDiv.classList);
       if (color == "blackButton") {
-        playDiv.classList.remove("green", "sketched", "blue", "eraser", "yellow", "red");
         playDiv.classList.add("black");
       }
       if (color == "redButton") {
-        playDiv.classList.remove("green", "sketched", "blue", "eraser", "yellow", "black");
         playDiv.classList.add("red");
       }
       if (color == "greyButton") {
-        playDiv.classList.remove("green", "red", "blue", "eraser", "yellow", "black");
         playDiv.classList.add("sketched");
       }
       if (color == "greenButton") {
-        playDiv.classList.remove("yellow", "sketched", "red", "blue", "eraser", "black");
         playDiv.classList.add("green");
       }
       if (color == "blueButton") {
-        playDiv.classList.remove("green", "sketched", "red", "eraser", "yellow", "black");
         playDiv.classList.add("blue");
       }
       if (color == "yellowButton") {
-        playDiv.classList.remove("green", "sketched", "red", "eraser", "blue", "black")
         playDiv.classList.add("yellow");
       }
       if (color == "eraserButton") {
-        playDiv.classList.remove("green", "sketched", "blue", "red", "yellow", "black");
         playDiv.classList.add("eraser");
       } 
       if (color == "empty") return;
@@ -90,15 +84,12 @@ function playSketch() {
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    console.log(button.classList[0]);
     if (button.classList.contains("active")) {
       color = "empty";
       return button.classList.remove("active");
     }
-    if (button.classList.contains("color"))  {
-      color = button.classList[0];
-      buttons.forEach(button => button.classList.remove("active"));
-      button.classList.add("active");
-    }
+    color = button.classList[0];
+    buttons.forEach(button => button.classList.remove("active"));
+    button.classList.add("active");
   });
 });
