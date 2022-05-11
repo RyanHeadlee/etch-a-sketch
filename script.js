@@ -107,6 +107,8 @@ submit.addEventListener('click', () => {
 
   if (input.value.substr(0, 1) === "#") input.value = input.value.slice(1, input.value.length);
 
+  if (input.value.length === 5) return;
+
   if (/^[a-fA-F\d]{3,6}$/.test(input.value) == false) return;
 
   colors.forEach(color => color.classList.remove("active"));
