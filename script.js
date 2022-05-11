@@ -87,7 +87,7 @@ colors.forEach(color => {
     if (hexColor !== "empty")  {
       hexColor = "empty";
       submit.value = "Enter";
-      return input.classList.remove("active");
+      input.classList.remove("active");
     }
     
     divColor = color.classList[0];
