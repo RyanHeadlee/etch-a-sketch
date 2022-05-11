@@ -57,14 +57,14 @@ function playSketch() {
 
     playDiv.addEventListener('mouseover', function () {
       if (hexColor !== "empty") {
-          playDiv.classList.remove(...playDiv.classList);
-          return playDiv.style.backgroundColor = "#" + hexColor;
+        playDiv.classList.remove(...playDiv.classList);
+        return playDiv.style.backgroundColor = "#" + hexColor;
       }
 
       if (divColor !== "empty") {
         playDiv.style.backgroundColor = "";
         playDiv.classList.remove(...playDiv.classList);
-        playDiv.classList.add(divColor);
+        return playDiv.classList.add(divColor);
       }
       
       if (divColor == "empty") return;
