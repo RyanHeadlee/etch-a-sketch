@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const playButton = document.querySelector(".playButton");
-const buttons = document.querySelectorAll(".color");
-let color;
+const colors = document.querySelectorAll(".color");
+let divColor;
 let playDivs;
 let area;
 let div;
@@ -53,27 +53,27 @@ function playSketch() {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function () {
-      if (color == "empty") return;
+      if (divColor == "empty") return;
 
       playDiv.classList.remove(...playDiv.classList);
       
-      playDiv.classList.add(color);
+      playDiv.classList.add(divColor);
     });
   }
 }
 
 // Will listen to clicks on the colors then properly display the correct color
-// and will add an active toggle to the current button.
+// and will add an active toggle to the current color selector.
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    if (button.classList.contains("active")) {
-      color = "empty";
-      return button.classList.remove("active");
+colors.forEach(color => {
+  color.addEventListener('click', () => {
+    if (color.classList.contains("active")) {
+      divColor = "empty";
+      return color.classList.remove("active");
     }
     
-    color = button.classList[0];
-    buttons.forEach(button => button.classList.remove("active"));
-    button.classList.add("active");
+    divColor = color.classList[0];
+    colors.forEach(color => color.classList.remove("active"));
+    color.classList.add("active");
   });
 });
