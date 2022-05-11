@@ -42,9 +42,25 @@ body {
 }
 
 .inputLabel {
-  color: black;
+  color: white;
   font-size: 23px;
   font-weight: bold;
+}
+
+.colorSubmit, .colorInput {
+  border: 0;
+  padding: 0.2em 0.5em;
+  border-radius: 0.2em;
+  background-color: black;
+  color: white;
+}
+
+.colorSubmit:hover {
+  background-color: gray;
+}
+
+.colorSubmit:active {
+  transform: translateY(0.1em);
 }
 
 .optionsContainer {
@@ -88,7 +104,7 @@ button {
 }
 
 .colorInput.active {
-  border-color: gold !important;
+  border: 3px solid gold !important;
   transform: scale(1) !important;
 }
 
