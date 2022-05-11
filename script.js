@@ -41,9 +41,7 @@ playButton.addEventListener("click", () => {
   
   if (playButton.classList.contains("play")) {
     area = Number(prompt("Size of sketch area:" + ""));
-    
-    if (area > 100 || Number(!area)) return; 
-    
+    if ((area > 100 || area < 0)|| Number(!area)) return; 
     createDivs(area);
     playButton.textContent = "Reset Sketch";
     playButton.classList.toggle("play");
