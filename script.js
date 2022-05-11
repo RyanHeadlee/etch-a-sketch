@@ -4,6 +4,7 @@ const colors = document.querySelectorAll(".color");
 const input = document.querySelector(".colorInput");
 const submit = document.querySelector(".colorSubmit");
 let divColor;
+let hexColor;
 let playDivs;
 let area;
 let div;
@@ -55,11 +56,20 @@ function playSketch() {
     let playDiv = playDivs[i];
 
     playDiv.addEventListener('mouseover', function () {
+      if (hexColor !== "empty") {
+          playDiv.classList.remove(...playDiv.classList);
+          return playDiv.style.backgroundColor = "#" + hexColor;
+      }
+
+      if (divColor !== "empty") {
+        playDiv.style.backgroundColor = "";
+        playDiv.classList.remove(...playDiv.classList);
+        playDiv.classList.add(divColor);
+      }
+      
       if (divColor == "empty") return;
 
-      playDiv.classList.remove(...playDiv.classList);
-      
-      playDiv.classList.add(divColor);
+      if (hexColor == "empty") return;
     });
   }
 }
@@ -73,6 +83,12 @@ colors.forEach(color => {
       divColor = "empty";
       return color.classList.remove("active");
     }
+
+    if (hexColor !== "empty")  {
+      hexColor = "empty";
+      submit.value = "Enter";
+      return input.classList.remove("active");
+    }
     
     divColor = color.classList[0];
     colors.forEach(color => color.classList.remove("active"));
@@ -80,7 +96,20 @@ colors.forEach(color => {
   });
 });
 
+// Will get the color code from input and correctly display in the workspace.
+
 submit.addEventListener('click', () => {
-  if (input.value == /^[a-z\d]{3,6}$/) return;
-  alert(input.value);
+  if (input.classList.contains("active")) {
+    input.classList.remove("active");
+    hexColor = "empty";
+    return submit.value = "Enter";
+  }
+
+  if (input.value.length < 1) return;
+
+  colors.forEach(color => color.classList.remove("active"));
+  hexColor = input.value;
+  input.classList.add("active");
+  submit.value = "Reset";
+  divColor = "empty";
 });

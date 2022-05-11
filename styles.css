@@ -87,6 +87,11 @@ button {
   transform: scale(1.4) !important;
 }
 
+.colorInput.active {
+  border-color: gold !important;
+  transform: scale(1) !important;
+}
+
 .blackButton {background-color: black}
 
 .redButton {background-color: #FA1919;}
