@@ -105,7 +105,7 @@ submit.addEventListener('click', () => {
     return submit.value = "Enter";
   }
 
-  if (input.value.length < 1) return;
+  if (/^[a-fA-F\d]{3,6}$/.test(input.value) == false) return;
 
   colors.forEach(color => color.classList.remove("active"));
   hexColor = input.value;
