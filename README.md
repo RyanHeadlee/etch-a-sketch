@@ -1,7 +1,4 @@
 # etch-a-sketch
 
-This is a little project that kind-of simulates the Etch-a-sketch portable game.
-
-You can choose between a few different colors and draw in the workspace.
-
-You also can choose how large the area of the workspace is when clicking play.
+This is a small project that allows the user to draw on a canvas that they choose (1x1 - 100x100).
+The user also can select between twelve default colors or input a hex color of their choosing.
